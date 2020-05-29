@@ -10,7 +10,13 @@ $(function(){
       $('.slider-dotshead').slick({
         slidesToShow: 4,
         slidesToScroll: 4,
-        asNavFor: '.header__slider'
+        asNavFor: '.header__slider',
+        responsive: [
+          {
+            breakpoint: 961,
+            settings: "unslick"
+          },
+        ]
       });
       
       $('.serf-slider').slick({
@@ -18,14 +24,64 @@ $(function(){
         slidesToScroll: 1,
         prevArrow: '<img class="slider-arrow slider-arrow__left" src="img/arrow-left.svg" alt=""></img>',
         nextArrow: '<img class="slider-arrow slider-arrow__right" src="img/arrow-right.svg" alt=""></img>',
-        asNavFor: '.slider-map'
+        asNavFor: '.slider-map',
+        responsive: [
+          {
+            breakpoint: 1210,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 910,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 720,
+            settings: {
+              slidesToShow: 1,
+              centerMode: true
+            }
+          },
+          {
+            breakpoint: 426,
+            settings: {
+              slidesToShow: 1,
+              centerMode: false
+            }
+          }
+        ]
       });
       $('.slider-map').slick({
         slidesToShow: 8,
         slidesToScroll: 1,
         arrows: false,
         asNavFor: '.serf-slider',
-        focusOnSelect: true
+        focusOnSelect: true,
+        responsive: [
+          {
+            breakpoint: 1103,
+            settings: {
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 910,
+            settings: {
+              slidesToShow: 2,
+              centerMode: true
+            }
+          },
+          {
+            breakpoint: 720,
+            settings: {
+              slidesToShow: 1,
+              centerMode: true
+            }
+          }
+        ]
       });
       $('.travel__slider').slick({
         infinite: true,
@@ -86,4 +142,10 @@ $(function(){
         $(this).toggleClass('active')
     });
 
+    $('.menu-btn').on('click', function(){
+      $('.menu').toggleClass('active')
+    });
+
+    
+    new WOW().init();
 });

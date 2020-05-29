@@ -45,13 +45,13 @@
         }
     .slider-arrow{
         position: absolute;
-        top: 40px;
-        right: 80px;
+        top: 30px;
+        right: 20px;
         cursor: pointer;
         z-index: 4;
     }
     .slider-arrow__left{
-        right: 125px;
+        right: 60px;
     }
     .slider-dotshead{
         position: absolute;
@@ -121,6 +121,30 @@
         font-weight: 500;
         padding-top: 6px;
         margin-bottom: 25px;
+    }
+}
+.menu-btn{
+    display: none;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: absolute;
+    z-index: 20;
+    right: 20px;
+    top: 75px;
+    background-color: rgba(255,255,255,0.1);
+    &__inner{
+        width: 40px;
+    }
+    &__line{
+        height: 5px;
+        background-color: $green;
+        + .menu-btn__line{
+            margin-top: 5px;
+        }
     }
 }
 
@@ -197,9 +221,11 @@
 }
 
 .serf-box{
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    &__wrapper{   
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     &__inner{
         min-height: 750px;
         background: rgba(#1c2121, .85);
@@ -249,9 +275,10 @@
     color: #fff;
 }}
 .serf-slider{
+    padding-top: 110px;
     .slider-arrow{
         top: 50px;
-        opacity: 0.25px;
+        opacity: .25;
     }
     .slick-slide:nth-child(4n + 1){
         .serf-box{
@@ -282,6 +309,7 @@
     margin: 0 auto;
     .slick-list{
         min-height: 635px;
+        overflow: visible;
     }
     .slick-current{
         .slider-dots__content{
@@ -342,6 +370,7 @@
     height: 23px;
     background-color: $green;
     border-radius: 50%;
+    box-shadow: 0px 0px 35px rgba(74, 246, 205, 0.837777);
 }
 .slider-dots__content{
     display: none;
@@ -350,6 +379,7 @@
     position: absolute;
     bottom: 35px;
     transform: translateX(-50%);
+    z-index: 1;
     &::before{
         content: '';
         position: absolute;
@@ -359,7 +389,7 @@
         border-left: 12px solid transparent;
         border-right: 12px solid transparent;
         bottom: -21px;
-        left: 50%;
+        left: calc(50% - 1px);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
     }
@@ -409,7 +439,7 @@
 }
 .slider-dots--6{
     top: 550px;
-    left: -12-px;
+    left: -120px;
 }
 .slider-dots--7{
     top: 375px;
@@ -798,3 +828,4 @@
 
 
 @import "media";
+
